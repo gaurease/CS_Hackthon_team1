@@ -2,6 +2,7 @@ package com.hackathon.team1.controller;
 
 import com.hackathon.team1.entities.Customer;
 import com.hackathon.team1.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.List;
 @RestController
 @CrossOrigin
 public class CustomerController {
+    @Autowired
     private CustomerService CustomerService;
     @GetMapping("/home")
     public String home() {
@@ -37,7 +39,7 @@ public class CustomerController {
     public Customer updateCustomer(@RequestBody Customer Customer) {
         return this.CustomerService.updateCustomer(Customer);
     }
-
+    @CrossOrigin
     @DeleteMapping("/Customers/{CustomerId}")
     public ResponseEntity<HttpStatus> deleteCustomer(@PathVariable String CustomerId) {
         try {

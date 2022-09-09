@@ -3,9 +3,10 @@ package com.hackathon.team1.service;
 import com.hackathon.team1.dao.CustomerDao;
 import com.hackathon.team1.entities.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class CustomerServiceImpl implements CustomerService{
     @Autowired
     private CustomerDao customerdao;

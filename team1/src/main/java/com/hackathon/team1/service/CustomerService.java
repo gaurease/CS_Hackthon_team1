@@ -1,9 +1,9 @@
 package com.hackathon.team1.service;
 
 import com.hackathon.team1.entities.Customer;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 public interface CustomerService {
     public List<Customer> getCustomers();
 
