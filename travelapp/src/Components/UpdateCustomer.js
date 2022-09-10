@@ -20,7 +20,6 @@ const UpdateCustomer = (props) => {
         putDataToServer(Customer
         );
         e.preventDefault();
-        props.SetisUpdate(false);
     };
 
     //creating function to post data on server
@@ -77,7 +76,7 @@ const UpdateCustomer = (props) => {
                 <FormGroup>
                     <label for="email">Customer
                         Email</label>
-                    <Input type="text" placeholder="Enter Email here" id="email" style={{ height: 100 }}
+                    <Input type="text" placeholder="Enter Email here" id="email" 
                         value={Customer.email}
                         onChange={(e) => {
                             setCustomer
@@ -91,7 +90,7 @@ const UpdateCustomer = (props) => {
                 <FormGroup>
                     <label for="phone">Customer
                         Phone</label>
-                    <Input type="text" placeholder="Enter Contact no here" id="phone" style={{ height: 100 }}
+                    <Input type="text" placeholder="Enter Contact no here" id="phone" 
                         value={Customer.phone}
                         onChange={(e) => {
                             setCustomer
@@ -104,7 +103,7 @@ const UpdateCustomer = (props) => {
                 </FormGroup>
                 <FormGroup>
                     <label for="phone">Tour</label>
-                    <Input type="text" placeholder="Enter Contact no here" id="tour" style={{ height: 100 }}
+                    <Input type="text" placeholder="Enter Contact no here" id="tour" 
                         value={Customer.tour}
                         onChange={(e) => {
                             setCustomer

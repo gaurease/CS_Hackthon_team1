@@ -32,7 +32,7 @@ const Customer=({customer, update})=>{
         );
     };
     const updateCustomers=()=>{
-        SetisUpdate(true)
+        SetisUpdate(!isUpdate)
     }
     return(
         <tr className="brow" >

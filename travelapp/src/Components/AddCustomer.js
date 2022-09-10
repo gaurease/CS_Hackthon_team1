@@ -20,6 +20,7 @@ const AddCustomer = () => {
         );
         postDataToServer(Customer
         );
+        setCustomer({})
         e.preventDefault();
     };
 
