@@ -22,4 +22,11 @@ public class AdminServiceImpl implements AdminService {
     public Admin addAdmin(Admin admin) {
         return admindao.save(admin);
     }
+
+    @Override
+    public Boolean userExists(String username) {
+        return admindao.existsById(username);
+    }
+
+
 }
