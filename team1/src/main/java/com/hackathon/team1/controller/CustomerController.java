@@ -1,6 +1,8 @@
 package com.hackathon.team1.controller;
 
+import com.hackathon.team1.entities.Admin;
 import com.hackathon.team1.entities.Customer;
+import com.hackathon.team1.service.AdminService;
 import com.hackathon.team1.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +16,32 @@ import java.util.List;
 public class CustomerController {
     @Autowired
     private CustomerService CustomerService;
+    @Autowired
+    private AdminService AdminService;
+
+    @GetMapping("/login/{username}/{password}")
+    public Boolean isPresent(@PathVariable String username, @PathVariable String password) {
+        Admin local_admin = this.AdminService.getAdmin(username);
+//        System.out.println(local_admin);
+
+//        if(!local_admin)
+//        {
+            if(local_admin.getPassword().equals(password)){
+                return true;
+            }
+
+//        }
+        return false;
+
+    }
+
+    @PostMapping("/add-user")
+    public Admin addAdmin(@RequestBody Admin admin) {
+        return this.AdminService.addAdmin(admin);
+    }
+
+
+
     @GetMapping("/home")
     public String home() {
         return "Welcome to Customers application";
