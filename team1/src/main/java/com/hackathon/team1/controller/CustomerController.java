@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.logging.SocketHandler;
 
 @RestController
 @CrossOrigin
@@ -21,18 +22,17 @@ public class CustomerController {
 
     @GetMapping("/login/{username}/{password}")
     public Boolean isPresent(@PathVariable String username, @PathVariable String password) {
-        Admin local_admin = this.AdminService.getAdmin(username);
-//        System.out.println(local_admin);
 
-//        if(!local_admin)
-//        {
+        Boolean userExists = this.AdminService.userExists(username);
+        System.out.println(userExists);
+
+        if(userExists){
+            Admin local_admin = this.AdminService.getAdmin(username);
             if(local_admin.getPassword().equals(password)){
                 return true;
             }
-
-//        }
+        }
         return false;
-
     }
 
     @PostMapping("/add-user")

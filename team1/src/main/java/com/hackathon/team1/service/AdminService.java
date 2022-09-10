@@ -10,4 +10,5 @@ public interface AdminService {
     public  Admin addAdmin(Admin admin);
 
 
+    Boolean userExists(String username);
 }
